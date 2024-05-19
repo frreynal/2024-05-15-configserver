@@ -1,3 +1,7 @@
+logging:
+  level:
+    root: DEBUG
+
 spring:
   application:
     name: "configserver"
@@ -12,6 +16,8 @@ spring:
         # search-locations: "file:///Users//eazybytes//Documents//config"
         git:
           uri: "https://github.com/frreynal/2024-05-15-configserver.git"
+          search-paths: config
+          skipSslValidation: true
           default-label: master
           timeout: 5
           clone-on-start: true
