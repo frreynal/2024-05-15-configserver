@@ -1,0 +1,12 @@
+server:
+  port: 8070
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetchRegistry: false # ce n'est pas eureka qui va fetcher les détails dans le registre pour les autres ms, ce sont les ms eux mêmes qui le feront
+    # le serveur eureka n'appelera jamais les micro services
+    registerWithEureka: false # on ne veut pas que eureka s'enregistre lui-même
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
